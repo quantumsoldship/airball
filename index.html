@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airball</title>
+    <title>Airball Standings</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Airball</h1>
-    </header>
-    <main>
-        <nav>
-            <ul>
-                <li><a href="merch.html">Merch</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="branding.html">Branding</a></li>
-                <li><a href="rules.html">Rules</a></li>
-            </ul>
-        </nav>
-    </main>
+    <h1>Airball Standings</h1>
+    <table id="standings">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="player-list">
+            <!-- Player data will be inserted here -->
+        </tbody>
+    </table>
+
+    <div id="player-details" class="modal" style="display: none;">
+        <h2>Player Details</h2>
+        <p id="details-content"></p>
+        <button onclick="closeDetails()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
