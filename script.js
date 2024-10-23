@@ -1,32 +1,39 @@
-const players = [
-    { name: "John Doe", location: "New York", score: 30, details: "John has played 5 games." },
-    { name: "Jane Smith", location: "Los Angeles", score: 45, details: "Jane has played 6 games." },
-    // Add more players as needed
-];
-
-function loadPlayers() {
-    const playerList = document.getElementById("player-list");
-    players.forEach(player => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td><a href="#" onclick="showDetails('${player.name}')">${player.name}</a></td>
-            <td>${player.location}</td>
-            <td>${player.score}</td>
-        `;
-        playerList.appendChild(row);
-    });
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
-function showDetails(name) {
-    const player = players.find(p => p.name === name);
-    const detailsContent = document.getElementById("details-content");
-    detailsContent.innerHTML = `Name: ${player.name}<br>Location: ${player.location}<br>Score: ${player.score}<br>Details: ${player.details}`;
-    document.getElementById("player-details").style.display = "block";
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-function closeDetails() {
-    document.getElementById("player-details").style.display = "none";
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
-// Load players on page load
-window.onload = loadPlayers;
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+button {
+    margin-top: 10px;
+}
