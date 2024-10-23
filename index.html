@@ -14,6 +14,7 @@
                 <th>Name</th>
                 <th>Location</th>
                 <th>Score</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody id="player-list">
@@ -27,6 +28,24 @@
         <button onclick="closeDetails()">Close</button>
     </div>
 
+    <div id="control-panel" class="modal" style="display: none;">
+        <h2>Control Mode</h2>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Submit</button>
+        <div id="admin-controls" style="display: none;">
+            <h3>Admin Controls</h3>
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="location" placeholder="Location">
+            <input type="number" id="score" placeholder="Score">
+            <button onclick="addPlayer()">Add Player</button>
+            <input type="file" id="file-input" accept=".csv">
+            <button onclick="uploadCSV()">Upload CSV</button>
+            <button onclick="exitControl()">Exit Control Mode</button>
+        </div>
+    </div>
+
+    <button onclick="openControlPanel()">Open Control Panel</button>
     <script src="script.js"></script>
 </body>
 </html>
